@@ -1,3 +1,4 @@
+Chart.defaults.bar.borderWidth = 40;
 function chartLoader(){
     let colors = ['rgba(255, 255, 255, 1)']
     let consumptionKaart = document.getElementById("consumption").getContext('2d');
@@ -90,10 +91,25 @@ function chartLoader(){
                 6400,
                 7400
             ],
-            backgroundColor: [colors, colors, colors, colors]
+            backgroundColor: [colors, colors, colors, colors],
+            minBarLength: 300,
         }]
     },
-    options:{}
+    options:{
+        borderWidth: 8,
+        legend: {
+            display: true,
+            position: 'top',
+            base: 0,
+            
+            labels: {
+                font:{
+                    family: "'DDIN'",
+                    size: 180
+                }
+            }
+        }
+    }
     });
     let govermentKaart = document.getElementById("goverment").getContext('2d');
     let govermentMars = new Chart(govermentKaart, {
@@ -123,7 +139,18 @@ function chartLoader(){
     },
     options:{
         rotation: 1 * Math.PI,
-        circumference: 1 * Math.PI
+        circumference: 1 * Math.PI,
+        borderWidth: 8,
+        legend: {
+            display: true,
+            position: 'right',
+            labels: {
+                font:{
+                    family: "'DDIN'",
+                    size: 180
+                }
+            }
+        }
     }
     });
 }
