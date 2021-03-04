@@ -14,7 +14,8 @@ function chartLoader(){
                 30,
                 36
             ],
-            backgroundColor: [colors, colors, colors, colors]
+            backgroundColor: [colors, colors, colors, colors],
+            order: 2
         }, {
             label:'Daily consumption per capita',
             data:[
@@ -24,11 +25,26 @@ function chartLoader(){
                 3.9
             ],
             type: 'line',
-            backgroundColor: [colors, colors, colors, colors],
             fill: 'false',
-        }]
+            backgroundColor: [colors, colors, colors, colors],
+            //borderColor: ['blue', 'blue', 'blue', 'blue'], to test
+            order: 1            
+        }]  
     },
-    options:{}
+    options:{
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        title: {
+            display: true,
+            text: 'Mars population and Mars Mars consumption'
+        },
+        spanGaps: true
+    }
     });
     let salesKaart = document.getElementById("sales").getContext('2d');
     let salesMars = new Chart(salesKaart, {
@@ -76,7 +92,19 @@ function chartLoader(){
             backgroundColor: 'rgba(255, 255, 255, 0.6)'
         }]
     },
-    options:{}
+    options:{
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        title: {
+            display: true,
+            text: 'Quaterly candybar sales'
+        }
+    }
     });
     let productionKaart = document.getElementById("production").getContext('2d');
     let productionnMars = new Chart(productionKaart, {
@@ -84,7 +112,7 @@ function chartLoader(){
     data:{
         labels:['1st Quater','2st Quater','3st Quater','4st Quater'],
         datasets:[{
-            label:'Production',
+            label:'Mars Production',
             data:[
                 5000,
                 5600,
@@ -101,13 +129,23 @@ function chartLoader(){
             display: true,
             position: 'top',
             base: 0,
-            
             labels: {
                 font:{
                     family: "'DDIN'",
                     size: 180
                 }
             }
+        },
+        title: {
+            display: true,
+            text: 'Quaterly Mars production'
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
         }
     }
     });
@@ -141,6 +179,10 @@ function chartLoader(){
         rotation: 1 * Math.PI,
         circumference: 1 * Math.PI,
         borderWidth: 8,
+        title: {
+            display: true,
+            text: '1st and 2nd Chamber of Mars'
+        },
         legend: {
             display: true,
             position: 'right',
