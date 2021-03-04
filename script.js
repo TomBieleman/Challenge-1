@@ -26,7 +26,7 @@ function chartLoader(){
             ],
             type: 'line',
             fill: 'false',
-            backgroundColor: [colors, colors, colors, colors],
+            backgroundColor: ['rgba(0, 0, 0, 0.6)', 'rgba(0, 0, 0, 0.6)', 'rgba(0, 0, 0, 0.6)', 'rgba(0, 0, 0, 0.6)'],
             //borderColor: ['blue', 'blue', 'blue', 'blue'], to test
             order: 1            
         }]  
@@ -41,8 +41,11 @@ function chartLoader(){
         },
         title: {
             display: true,
-            text: 'Mars population and Mars Mars consumption'
+            text: 'Mars population and Mars Mars consumption',
+            fontColor: 'white',
+            fontSize: 16
         },
+        aspectRatio: 1.6,
         spanGaps: true
     }
     });
@@ -100,9 +103,12 @@ function chartLoader(){
                 }
             }]
         },
+        aspectRatio: 1.6,
         title: {
             display: true,
-            text: 'Quaterly candybar sales'
+            text: 'Quaterly candybar sales',
+            fontColor: 'white',
+            fontSize: 16
         }
     }
     });
@@ -124,7 +130,15 @@ function chartLoader(){
         }]
     },
     options:{
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
         borderWidth: 8,
+        aspectRatio: 1.6,
         legend: {
             display: true,
             position: 'top',
@@ -138,14 +152,9 @@ function chartLoader(){
         },
         title: {
             display: true,
-            text: 'Quaterly Mars production'
-        },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+            text: 'Quaterly Mars production',
+            fontColor: 'white',
+            fontSize: 16
         }
     }
     });
@@ -181,8 +190,11 @@ function chartLoader(){
         borderWidth: 8,
         title: {
             display: true,
-            text: '1st and 2nd Chamber of Mars'
+            text: '1st and 2nd Chamber of Mars',
+            fontColor: 'white',
+            fontSize: 16
         },
+        aspectRatio: 1.6,
         legend: {
             display: true,
             position: 'right',
